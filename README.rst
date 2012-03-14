@@ -23,17 +23,17 @@ I've decided to publish the code anyway as
  - I'm trying to move towards a practice of 'publish everything when possible' , and this seemed like a good place to start.
 
 I'm also quietly pleased with the ``@per_frame`` function decorator. 
-This takes a function and produces a duplicate version
-that will apply the action to all frames, bound with the prefix ``all_``,
-so for example
+This takes a function and binds in an additional wrapped version with the prefix ``all_``
+that will apply the action to all frames,
+so for example implementing a zoom function:
 
     ``foo.zoom_to(4) # zoom active frame to 4x``
 
-becomes: 
+trivially provides the same functionality for all frames: 
 
     ``foo.all_zoom_to(4) # zoom all frames to 4x``
 
-This is particularly useful when say, panning around filtered and original versions of an image, in tandem. (And saves on code duplication!)
+Applying the same action to all frames is particularly useful when say, panning around filtered and original versions of an image, in tandem.
 
 
 Comments and collaborators very welcome!
